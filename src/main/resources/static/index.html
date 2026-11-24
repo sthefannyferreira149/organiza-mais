@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Organiza+ | Minhas tarefas</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css?v=3">
+</head>
+<body>
+<main class="app">
+    <header class="topbar">
+        <a class="brand" href="/">Organiza<span>+</span></a>
+        <div class="user">AS</div>
+    </header>
+
+    <section class="content">
+        <div class="heading">
+            <div>
+                <p class="date" id="data-hoje"></p>
+                <h1>Minhas tarefas</h1>
+                <p class="subtitle">Organize o que precisa ser fb eito hoje.</p>
+            </div>
+        </div>
+
+        <form class="new-task" id="form-tarefa">
+            <input id="input-titulo" type="text" placeholder="O que você precisa fazer?" aria-label="Título da tarefa" required>
+            <input id="input-descricao" type="text" placeholder="Descrição (opcional)" aria-label="Descrição da tarefa">
+            <input id="input-data" type="date" aria-label="Data de entrega">
+            <button class="button primary" type="submit">Adicionar</button>
+        </form>
+
+        <div class="toolbar">
+            <div class="filters" role="group" aria-label="Filtrar tarefas">
+                <button class="filter active" data-filtro="todas" type="button">Todas <strong id="c-todas">0</strong></button>
+                <button class="filter" data-filtro="pendentes" type="button">Pendentes <strong id="c-pendentes">0</strong></button>
+                <button class="filter" data-filtro="concluidas" type="button">Concluídas <strong id="c-concluidas">0</strong></button>
+            </div>
+            <span class="result-count" id="resultado"></span>
+        </div>
+
+        <section class="task-list" id="lista-tarefas" aria-live="polite"></section>
+        <p class="empty" id="vazio" hidden>Nenhuma tarefa encontrada.</p>
+    </section>
+</main>
+
+<dialog id="dialog-editar">
+    <form method="dialog" id="form-editar">
+        <div class="dialog-heading">
+            <h2>Editar tarefa</h2>
+            <button class="close" value="cancel" aria-label="Fechar" type="submit">×</button>
+        </div>
+        <input id="editar-titulo" type="text" placeholder="Título da tarefa" required>
+        <textarea id="editar-descricao" rows="3" placeholder="Descrição (opcional)"></textarea>
+        <input id="editar-data" type="date" aria-label="Data de entrega">
+        <div class="dialog-actions">
+            <button class="button secondary" value="cancel" type="submit">Cancelar</button>
+            <button class="button primary" value="default" type="submit">Salvar alterações</button>
+        </div>
+    </form>
+</dialog>
+<script src="app.js?v=3"></script>
+</body>
+</html>
