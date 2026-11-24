@@ -57,7 +57,7 @@ Não é necessário instalar o Maven, pois o projeto já inclui o Maven Wrapper.
 Clone o repositório:
 
 ```bash
-git clone https://github.com/FatimaAlencar/organiza-mais.git
+git clone https://github.com/sthefannyferreira149/organiza-mais.git
 cd organiza-mais
 ```
 
@@ -71,7 +71,7 @@ Por padrão, a aplicação utiliza as configurações abaixo:
 | --- | --- |
 | Banco | `gerenciador_db` |
 | Usuário | `root` |
-| Senha | `123456` |
+| Senha | `SUA_SENHA` |
 | Host | `localhost` |
 | Porta | `3306` |
 
